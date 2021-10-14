@@ -19,6 +19,7 @@ interface IconProps {
 	solidIcon?: IconType;
 	path?: string;
 	isModal?: boolean;
+	needNotifications?: boolean;
 }
 
 type IconsType = IconProps[];
@@ -30,6 +31,7 @@ export const navItems: IconsType = [
 		outlineIcon: HomeIcon,
 		solidIcon: SolidHomeIcon,
 		path: '/',
+		needNotifications: false,
 	},
 	{
 		key: 2,
@@ -37,6 +39,7 @@ export const navItems: IconsType = [
 		outlineIcon: PaperAirplaneIcon,
 		solidIcon: SolidPaperAirplaneIcon,
 		path: '/direct',
+		needNotifications: true,
 	},
 	{
 		key: 3,
@@ -44,6 +47,7 @@ export const navItems: IconsType = [
 		outlineIcon: PlusCircleIcon,
 		solidIcon: SolidPlusCircleIcon,
 		isModal: true,
+		needNotifications: false,
 	},
 	{
 		key: 4,
@@ -51,6 +55,7 @@ export const navItems: IconsType = [
 		outlineIcon: HeartIcon,
 		solidIcon: SolidHeartIcon,
 		path: '/explore',
+		needNotifications: true,
 	},
 ];
 

@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Layout from '@layout/index';
+import Feed from '@containers/feed';
 
 const Home: NextPage = () => (
 	<div>
@@ -13,7 +14,7 @@ const Home: NextPage = () => (
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 		<Layout>
-			<div>Feed</div>
+			<Feed />
 		</Layout>
 	</div>
 );

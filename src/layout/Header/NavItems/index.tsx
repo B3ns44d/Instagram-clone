@@ -13,16 +13,26 @@ const NavItems: FC<NavItemsProps> = ({
 	numberOfNotifications,
 }): JSX.Element => {
 	const { pathname } = useRouter();
+
 	return (
 		<>
 			{navItems?.map(
-				({ outlineIcon: OutlineIcon, solidIcon: SolidIcon, path, key }) => {
+				({
+					key,
+					outlineIcon: OutlineIcon,
+					solidIcon: SolidIcon,
+					path,
+					needNotifications,
+				}) => {
 					const Icon = pathname === path ? SolidIcon : OutlineIcon;
+					const shouldShowNotifications =
+						needNotifications && hasNotifications && numberOfNotifications > 0;
+
 					return (
 						<Link href={createLinkPath(path)} key={createKey(key)} passHref>
-							<div className="relative nav-button">
+							<div className="relative">
 								<Icon className="nav-button" />
-								{hasNotifications && (
+								{shouldShowNotifications && (
 									<div className="absolute text-sm w-5 h-5 text-white rounded-full flex justify-center items-center bg-red-500 -top-1 -right-2 animate-pulse">
 										{numberOfNotifications}
 									</div>
@@ -37,7 +47,7 @@ const NavItems: FC<NavItemsProps> = ({
 };
 
 NavItems.defaultProps = {
-	hasNotifications: false,
-	numberOfNotifications: 0,
+	hasNotifications: true,
+	numberOfNotifications: 1,
 };
 export default NavItems;
