@@ -9,10 +9,7 @@ lint-staged.config.js
 next.config.js
 .gitignore
 .prettierrc
-.eslintrc
 package.json
 yarn.lock
 package-lock.json
 README.md
-dist
-.prettierignore

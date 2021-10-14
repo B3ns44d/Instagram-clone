@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.search-input {
+	@apply block w-full pl-10 pr-3 py-2 border border-gray-400 rounded-md leading-5 bg-gray-100 placeholder-gray-500 sm:text-sm transition duration-150 ease-in-out;
+}
+.search-input-focus {
+	@apply focus:outline-none focus:placeholder-gray-400;
+}
+
+.arrow-img {
+	transform: rotate(45deg);
+}
+
+.nav-button {
+	@apply hidden h-6 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
+}
