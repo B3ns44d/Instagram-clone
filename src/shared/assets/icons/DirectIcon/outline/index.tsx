@@ -1,9 +1,9 @@
 import type { SVGProps, ReactElement } from 'react';
 
-const DirectIcon = ({
+export const DirectIcon = ({
 	height = '22px',
 	width = '22px',
-	color = '#000000',
+	color = '#262626',
 	...props
 }: SVGProps<SVGSVGElement>): ReactElement => (
 	<svg

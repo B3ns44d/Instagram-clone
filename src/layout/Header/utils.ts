@@ -1,16 +1,17 @@
-import {
-	HomeIcon,
-	HeartIcon,
-	PlusCircleIcon,
-	PaperAirplaneIcon,
-} from '@heroicons/react/outline';
-import {
-	HomeIcon as SolidHomeIcon,
-	HeartIcon as SolidHeartIcon,
-	PlusCircleIcon as SolidPlusCircleIcon,
-	PaperAirplaneIcon as SolidPaperAirplaneIcon,
-} from '@heroicons/react/solid';
 import { IconType } from '@shared/types';
+import {
+	OutlineActivityIcon,
+	SolidActivityIcon,
+} from '@shared/assets/icons/ActivityIcon';
+import { OutlineHomeIcon, SolidHomeIcon } from '@shared/assets/icons/HomeIcon';
+import {
+	SolidExploreIcon,
+	OutlineExploreIcon,
+} from '@shared/assets/icons/ExploreIcon';
+import {
+	OutlineDirectIcon,
+	SolidDirectIcon,
+} from '@shared/assets/icons/DirectIcon';
 
 interface IconProps {
 	key?: number;
@@ -28,42 +29,35 @@ export const navItems: IconsType = [
 	{
 		key: 1,
 		name: 'Home',
-		outlineIcon: HomeIcon,
+		outlineIcon: OutlineHomeIcon,
 		solidIcon: SolidHomeIcon,
 		path: '/',
 		needNotifications: false,
 	},
 	{
 		key: 2,
-		name: 'Direct',
-		outlineIcon: PaperAirplaneIcon,
-		solidIcon: SolidPaperAirplaneIcon,
-		path: '/direct',
-		needNotifications: true,
-	},
-	{
-		key: 3,
 		name: 'New Post',
-		outlineIcon: PlusCircleIcon,
-		solidIcon: SolidPlusCircleIcon,
+		outlineIcon: OutlineDirectIcon,
+		solidIcon: SolidDirectIcon,
 		isModal: true,
 		needNotifications: false,
 	},
 	{
+		key: 3,
+		name: 'Direct',
+		outlineIcon: OutlineExploreIcon,
+		solidIcon: SolidExploreIcon,
+		path: '/direct',
+		needNotifications: true,
+	},
+	{
 		key: 4,
 		name: 'explore',
-		outlineIcon: HeartIcon,
-		solidIcon: SolidHeartIcon,
+		outlineIcon: OutlineActivityIcon,
+		solidIcon: SolidActivityIcon,
 		path: '/explore',
 		needNotifications: true,
 	},
 ];
-
-export const createLinkPath = (path: string): string => {
-	if (path === undefined) {
-		return '/';
-	}
-	return path.startsWith('/') ? path : `/${path}`;
-};
 
 export const createKey = (key: number): string => `nav-item-${key}`;
