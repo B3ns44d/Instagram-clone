@@ -6,9 +6,10 @@ import { PAGE_MAX_WIDTH } from '@shared/constants';
 import clsx from 'clsx';
 import { SearchIcon, MenuIcon } from '@heroicons/react/outline';
 import Avatar from '@components/Avatar';
+import type { ReactElement } from 'react';
 import NavItems from './NavItems';
 
-const Header = (): JSX.Element => {
+const Header = (): ReactElement => {
 	const [pageSize, setPageSize] = useState(null);
 	const { width } = useSize(pageSize);
 	const { largeLogo, smallLogo } = IMAGES;

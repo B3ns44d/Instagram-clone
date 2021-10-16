@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactElement } from 'react';
 import { childrenProps } from '@shared/interfaces';
 import Link from 'next/link';
 
@@ -10,7 +10,7 @@ const Clickable: FC<ClickableProps> = ({
 	href,
 	children,
 	...rest
-}): JSX.Element => (
+}): ReactElement => (
 	<Link href={href || ''} passHref>
 		<div {...rest} className="cursor-pointer">
 			{children}

@@ -1,11 +1,11 @@
-import type { SVGProps } from 'react';
+import type { SVGProps, ReactElement } from 'react';
 
 const DirectIcon = ({
 	height = '22px',
 	width = '22px',
 	color = '#000000',
 	...props
-}: SVGProps<SVGSVGElement>): JSX.Element => (
+}: SVGProps<SVGSVGElement>): ReactElement => (
 	<svg
 		aria-label="Direct"
 		fill={color}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import type { FC } from 'react';
+import type { FC, ReactElement } from 'react';
 import { createKey, createLinkPath, navItems } from '../utils';
 
 interface NavItemsProps {
@@ -11,7 +11,7 @@ interface NavItemsProps {
 const NavItems: FC<NavItemsProps> = ({
 	hasNotifications,
 	numberOfNotifications,
-}): JSX.Element => {
+}): ReactElement => {
 	const { pathname } = useRouter();
 
 	return (

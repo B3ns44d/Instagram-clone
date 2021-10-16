@@ -1,8 +1,8 @@
 import { childrenProps } from '@shared/interfaces';
-import type { FC } from 'react';
+import type { FC, ReactElement } from 'react';
 import Header from './Header';
 
-const Layout: FC = ({ children }: childrenProps): JSX.Element => (
+const Layout: FC = ({ children }: childrenProps): ReactElement => (
 	<div>
 		<Header />
 		{children}

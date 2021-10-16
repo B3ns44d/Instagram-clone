@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { FC } from 'react';
+import type { FC, ReactElement } from 'react';
 import { useEffect, useState } from 'react';
 import { helpers } from 'faker';
 import Story from '@components/Story';
 
-const Stories: FC = (): JSX.Element => {
+const Stories: FC = (): ReactElement => {
 	const [stories, setStories] = useState<Array<string | number>>([]);
 
 	useEffect(() => {

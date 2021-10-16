@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type { FC } from 'react';
+import type { FC, ReactElement } from 'react';
 // import Image from 'next/image';
 import { StoryProps } from './utils';
 
@@ -8,7 +8,7 @@ const Story: FC<StoryProps> = ({
 	src,
 	alt,
 	...rest
-}): JSX.Element => (
+}): ReactElement => (
 	<div>
 		<div className="hover:-rotate-12 transform transition duration-300">
 			<img

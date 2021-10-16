@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from '@layout/index';
 import Feed from '@layout/feed';
 import Stories from '@containers/stories';
+import Posts from '@containers/posts';
 
 const Home: NextPage = () => (
 	<div className="bg-gray-50 h-screen overflow-y-scroll scrollbar-hide">
@@ -18,6 +19,7 @@ const Home: NextPage = () => (
 			<Feed>
 				<section className="col-span-2">
 					<Stories />
+					<Posts />
 				</section>
 			</Feed>
 		</Layout>

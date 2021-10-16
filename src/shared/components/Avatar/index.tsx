@@ -1,8 +1,8 @@
-import type { FC } from 'react';
+import type { FC, ReactElement } from 'react';
 import Image from 'next/image';
 import { AvatarProps } from './utils';
 
-const Avatar: FC<AvatarProps> = ({ src, alt, ...rest }): JSX.Element => (
+const Avatar: FC<AvatarProps> = ({ src, alt, ...rest }): ReactElement => (
 	<Image
 		src={src}
 		alt={alt}
