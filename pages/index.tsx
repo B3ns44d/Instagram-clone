@@ -1,10 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Layout from '@layout/index';
-import Feed from '@containers/feed';
+import Feed from '@layout/feed';
+import Stories from '@containers/stories';
 
 const Home: NextPage = () => (
-	<div>
+	<div className="bg-gray-50 h-screen overflow-y-scroll scrollbar-hide">
 		<Head>
 			<title>Instagram</title>
 			<meta
@@ -14,7 +15,11 @@ const Home: NextPage = () => (
 			<link rel="icon" href="/favicon.ico" />
 		</Head>
 		<Layout>
-			<Feed />
+			<Feed>
+				<section className="col-span-2">
+					<Stories />
+				</section>
+			</Feed>
 		</Layout>
 	</div>
 );

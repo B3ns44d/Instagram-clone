@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 module.exports = {
 	mode: 'jit',
 	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
@@ -8,5 +9,5 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [],
+	plugins: [require('tailwind-scrollbar-hide')],
 };

@@ -5,6 +5,7 @@ import { useSize } from 'ahooks';
 import { PAGE_MAX_WIDTH } from '@shared/constants';
 import clsx from 'clsx';
 import { SearchIcon, MenuIcon } from '@heroicons/react/outline';
+import Avatar from '@components/Avatar';
 import NavItems from './NavItems';
 
 const Header = (): JSX.Element => {
@@ -20,17 +21,17 @@ const Header = (): JSX.Element => {
 	const logoSrc: string = isMaxWidth ? largeLogo : smallLogo;
 
 	return (
-		<div className="shadow-sm border-b bg-white sticky top-0 z-50">
-			<div className="flex justify-between bg-white align-items-center max-w-6xl mx-5 lg:mx-auto">
+		<nav className="shadow-sm border-b bg-white sticky top-0 z-20">
+			<div className="flex justify-between bg-white align-items-center max-w-6xl mx-5 lg:mx-auto h-14">
 				<div
 					className={clsx([
 						'relative cursor-pointer',
-						isMaxWidth ? 'w-24 h-24' : 'w-10 h-10 flex-shrink-0',
+						isMaxWidth ? 'w-24 h-14' : 'w-10 h-14 flex-shrink-0',
 					])}
 				>
 					<Image src={logoSrc} alt="logo" layout="fill" objectFit="contain" />
 				</div>
-				<div className="flex items-center justify-center px-2 lg:ml-12">
+				<div className="hidden md:flex items-center justify-center px-2 lg:ml-12">
 					<div className="max-w-lg w-full lg:max-w-xs">
 						<div className="relative">
 							<div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -48,18 +49,15 @@ const Header = (): JSX.Element => {
 				<div className="flex items-center justify-end space-x-4">
 					<NavItems />
 					<MenuIcon className="h-6 w-6 md:hidden cursor-pointer" />
-					<div className="relative h-8 w-8 ">
-						<Image
+					<div className="relative h-8 w-8">
+						<Avatar
 							src="https://e.top4top.io/p_2113ondl41.jpg"
 							alt="profilePicture"
-							layout="fill"
-							objectFit="contain"
-							className="rounded-full cursor-pointer mx-auto max-w-120-px"
 						/>
 					</div>
 				</div>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

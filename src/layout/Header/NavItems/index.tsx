@@ -47,7 +47,7 @@ const NavItems: FC<NavItemsProps> = ({
 };
 
 NavItems.defaultProps = {
-	hasNotifications: true,
-	numberOfNotifications: 1,
+	hasNotifications: false,
+	numberOfNotifications: 0,
 };
 export default NavItems;
