@@ -18,8 +18,8 @@ const PostActions: FC<PostActionsProps> = ({
 	onBookmarkIconClick,
 	...rest
 }): ReactElement => (
-	<div className="flex justify-between px-4 pt-4" {...rest}>
-		<div className="flex space-x-4">
+	<>
+		<div className="flex space-x-4" {...rest}>
 			<OutlineActivityIcon
 				className="post-button"
 				onClick={() => onLikeIconClick}
@@ -31,7 +31,7 @@ const PostActions: FC<PostActionsProps> = ({
 			/>
 		</div>
 		<BookmarkIcon className="post-button" onClick={() => onBookmarkIconClick} />
-	</div>
+	</>
 );
 
 PostActions.defaultProps = {

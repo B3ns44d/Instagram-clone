@@ -31,7 +31,9 @@ const Post: FC<PostProps> = ({
 		</div>
 
 		<img src={imageUrl} alt={username} className="object-cover w-full" />
-		<PostActions />
+		<div className="flex justify-between px-4 pt-4">
+			<PostActions />
+		</div>
 		<p className="p-5 truncate">
 			<Link href={username} passHref>
 				<span className="font-bold cursor-pointer mr-1">{username} </span>

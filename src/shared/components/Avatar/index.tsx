@@ -8,7 +8,7 @@ const Avatar: FC<AvatarProps> = ({ src, alt, ...rest }): ReactElement => (
 		alt={alt}
 		layout="fill"
 		objectFit="contain"
-		className="rounded-full cursor-pointer mx-auto ring-2 ring-gray-200"
+		className="rounded-full cursor-pointer mx-auto"
 		{...rest}
 	/>
 );

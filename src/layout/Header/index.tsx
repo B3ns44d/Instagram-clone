@@ -52,7 +52,7 @@ const Header = (): ReactElement => {
 					<MenuIcon className="h-6 w-6 md:hidden cursor-pointer" />
 					<div className="relative h-8 w-8">
 						<Avatar
-							src="https://e.top4top.io/p_2113ondl41.jpg"
+							src="https://k.top4top.io/p_21165x5vn1.jpeg"
 							alt="profilePicture"
 						/>
 					</div>

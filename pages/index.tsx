@@ -1,9 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Layout from '@layout/index';
-import Feed from '@layout/feed';
+import Feed from '@layout/Feed';
 import Stories from '@containers/stories';
 import Posts from '@containers/posts';
+import { UserMiniProfile } from '@containers/userProfile';
+import Suggestions from '@containers/suggestions';
 
 const Home: NextPage = () => (
 	<div className="bg-gray-50 h-screen overflow-y-scroll scrollbar-hide">
@@ -20,6 +22,12 @@ const Home: NextPage = () => (
 				<section className="col-span-2">
 					<Stories />
 					<Posts />
+				</section>
+				<section className="hidden xl:inline-grid md:col-span-1">
+					<div className="fixed top-20">
+						<UserMiniProfile />
+						<Suggestions />
+					</div>
 				</section>
 			</Feed>
 		</Layout>
