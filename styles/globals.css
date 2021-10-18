@@ -19,3 +19,27 @@
 .post-button {
 	@apply h-7 cursor-pointer hover:scale-125 transition-all duration-150 ease-out;
 }
+
+.instagram-logo {
+	background-position: 0 -130px;
+	height: 51px;
+	width: 175px;
+	background-image: url(https://bit.ly/3v2LT17);
+}
+.google-logo {
+	background-image: url(https://bit.ly/3AMDUXj);
+	height: 14px;
+	width: 14px;
+}
+.apple-store-logo {
+	background-position: -132px -182px;
+	height: 42px;
+	width: 128px;
+	background-image: url(https://bit.ly/3v2LT17);
+}
+.google-store-logo {
+	background-position: 0 -182px;
+	height: 42px;
+	width: 130px;
+	background-image: url(https://bit.ly/3v2LT17);
+}
