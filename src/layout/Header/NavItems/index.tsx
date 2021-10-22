@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import type { FC, ReactElement } from 'react';
 import { useRecoilState } from 'recoil';
-import { modalState } from 'src/atoms';
+import { modalState } from '@atoms/index';
 import { createKey, navItems } from '../utils';
 
 interface NavItemsProps {
