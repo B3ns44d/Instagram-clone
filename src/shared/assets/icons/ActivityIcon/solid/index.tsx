@@ -7,7 +7,7 @@ export const ActivityIcon = ({
 	...props
 }: SVGProps<SVGSVGElement>): ReactElement => (
 	<svg
-		aria-label="Activity"
+		aria-label="Activity Feed"
 		fill={color}
 		viewBox="0 0 48 48"
 		height={height}

@@ -12,6 +12,7 @@ import {
 	OutlineDirectIcon,
 	SolidDirectIcon,
 } from '@shared/assets/icons/DirectIcon';
+import NewPost from '@shared/assets/icons/NewPost';
 
 interface IconProps {
 	key?: number;
@@ -36,26 +37,33 @@ export const navItems: IconsType = [
 	},
 	{
 		key: 2,
-		name: 'New Post',
+		name: 'Direct',
 		outlineIcon: OutlineDirectIcon,
 		solidIcon: SolidDirectIcon,
-		isModal: true,
-		needNotifications: false,
-	},
-	{
-		key: 3,
-		name: 'Direct',
-		outlineIcon: OutlineExploreIcon,
-		solidIcon: SolidExploreIcon,
 		path: '/direct',
 		needNotifications: true,
 	},
 	{
+		key: 3,
+		name: 'New Post',
+		outlineIcon: NewPost,
+		isModal: true,
+		needNotifications: false,
+	},
+	{
 		key: 4,
 		name: 'explore',
+		outlineIcon: OutlineExploreIcon,
+		solidIcon: SolidExploreIcon,
+		path: '/explore',
+		needNotifications: true,
+	},
+	{
+		key: 4,
+		name: 'activity',
 		outlineIcon: OutlineActivityIcon,
 		solidIcon: SolidActivityIcon,
-		path: '/explore',
+		path: '/activity',
 		needNotifications: true,
 	},
 ];
