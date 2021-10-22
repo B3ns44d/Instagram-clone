@@ -70,7 +70,7 @@ const SignIn: NextPage = () => {
 						/>
 						<button
 							type="button"
-							onClick={() => signIn(SIGNIN_WITH_GOOGLE)}
+							onClick={() => signIn(SIGNIN_WITH_GOOGLE, { callbackUrl: '/' })}
 							className="text-xs text-blue-900 font-semibold"
 						>
 							Log in with Google

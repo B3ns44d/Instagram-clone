@@ -7,11 +7,14 @@ import clsx from 'clsx';
 import { SearchIcon, MenuIcon } from '@heroicons/react/outline';
 import Avatar from '@components/Avatar';
 import type { ReactElement } from 'react';
+import { signIn, signOut, useSession } from 'next-auth/client';
 import NavItems from './NavItems';
 
 const Header = (): ReactElement => {
 	const [pageSize, setPageSize] = useState(null);
 	const { width } = useSize(pageSize);
+	const [session] = useSession();
+
 	const { largeLogo, smallLogo } = IMAGES;
 
 	useEffect(() => {
@@ -48,14 +51,27 @@ const Header = (): ReactElement => {
 					</div>
 				</div>
 				<div className="flex items-center justify-end space-x-4">
-					<NavItems />
-					<MenuIcon className="h-6 w-6 md:hidden cursor-pointer" />
-					<div className="relative h-8 w-8">
-						<Avatar
-							src="https://k.top4top.io/p_21165x5vn1.jpeg"
-							alt="profilePicture"
-						/>
-					</div>
+					{session ? (
+						<>
+							<NavItems />
+							<MenuIcon className="h-6 w-6 md:hidden cursor-pointer" />
+							<div className="relative h-8 w-8">
+								<Avatar
+									src={session.user.image}
+									alt="profile picture"
+									onProfileClick={() => signOut()}
+								/>
+							</div>
+						</>
+					) : (
+						<button
+							type="button"
+							className="text-gray-500 hover:text-gray-900 font-bold"
+							onClick={() => signIn()}
+						>
+							Sign In
+						</button>
+					)}
 				</div>
 			</div>
 		</nav>

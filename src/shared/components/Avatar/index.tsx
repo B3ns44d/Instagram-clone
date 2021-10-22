@@ -1,14 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import type { FC, ReactElement } from 'react';
-import Image from 'next/image';
 import { AvatarProps } from './utils';
 
-const Avatar: FC<AvatarProps> = ({ src, alt, ...rest }): ReactElement => (
-	<Image
+const Avatar: FC<AvatarProps> = ({
+	src,
+	alt,
+	onProfileClick,
+	...rest
+}): ReactElement => (
+	<img
+		aria-hidden="true"
+		onClick={() => onProfileClick()}
 		src={src}
 		alt={alt}
-		layout="fill"
-		objectFit="contain"
-		className="rounded-full cursor-pointer mx-auto"
+		className="rounded-full cursor-pointer mx-auto object-contain"
 		{...rest}
 	/>
 );
