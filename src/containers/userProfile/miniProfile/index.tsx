@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import UserNameText from '@components/UserNameText';
 import type { FC, ReactElement } from 'react';
+import { signOut } from 'next-auth/client';
 
 const MiniProfile: FC = (): ReactElement => (
 	<div className="flex items-center justify-between mt-14 ml-10">
@@ -13,7 +14,11 @@ const MiniProfile: FC = (): ReactElement => (
 			<UserNameText userName="youssef.py3" />
 			<h3 className="text-sm text-gray-500">검은 색 | black</h3>
 		</div>
-		<button type="submit" className="text-blue-400 text-sm font-semibold">
+		<button
+			type="submit"
+			className="text-blue-400 text-sm font-semibold"
+			onClick={() => signOut()}
+		>
 			Sign out
 		</button>
 	</div>
