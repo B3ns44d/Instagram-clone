@@ -2,6 +2,8 @@ import { createLinkPath } from '@shared/utils';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import type { FC, ReactElement } from 'react';
+import { useRecoilState } from 'recoil';
+import { modalState } from 'src/atoms';
 import { createKey, navItems } from '../utils';
 
 interface NavItemsProps {
@@ -14,6 +16,7 @@ const NavItems: FC<NavItemsProps> = ({
 	numberOfNotifications,
 }): ReactElement => {
 	const { pathname } = useRouter();
+	const [isOpen, setIsOpen] = useRecoilState(modalState);
 
 	return (
 		<>
@@ -24,6 +27,7 @@ const NavItems: FC<NavItemsProps> = ({
 					solidIcon: SolidIcon,
 					path,
 					needNotifications,
+					isModal,
 				}) => {
 					const Icon = pathname === path ? SolidIcon : OutlineIcon;
 					const shouldShowNotifications =
@@ -32,7 +36,10 @@ const NavItems: FC<NavItemsProps> = ({
 					return (
 						<Link href={createLinkPath(path)} key={createKey(key)} passHref>
 							<div className="relative">
-								<Icon className="nav-button" />
+								<Icon
+									className="nav-button"
+									onClick={() => isModal && setIsOpen(!isOpen)}
+								/>
 								{shouldShowNotifications && (
 									<div className="absolute text-sm w-5 h-5 text-white rounded-full flex justify-center items-center bg-red-500 -top-1 -right-2 animate-pulse">
 										{numberOfNotifications}

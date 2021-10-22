@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import IMAGES from '@shared/constants/images';
 import Image from 'next/image';
 import { useSize } from 'ahooks';
@@ -8,13 +8,14 @@ import { SearchIcon, MenuIcon } from '@heroicons/react/outline';
 import Avatar from '@components/Avatar';
 import type { ReactElement } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/client';
+import Link from 'next/link';
+
 import NavItems from './NavItems';
 
 const Header = (): ReactElement => {
 	const [pageSize, setPageSize] = useState(null);
 	const { width } = useSize(pageSize);
 	const [session] = useSession();
-
 	const { largeLogo, smallLogo } = IMAGES;
 
 	useEffect(() => {
@@ -33,7 +34,9 @@ const Header = (): ReactElement => {
 						isMaxWidth ? 'w-24 h-14' : 'w-10 h-14 flex-shrink-0',
 					])}
 				>
-					<Image src={logoSrc} alt="logo" layout="fill" objectFit="contain" />
+					<Link passHref href="/">
+						<Image src={logoSrc} alt="logo" layout="fill" objectFit="contain" />
+					</Link>
 				</div>
 				<div className="hidden md:flex items-center justify-center px-2 lg:ml-12">
 					<div className="max-w-lg w-full lg:max-w-xs">
@@ -78,4 +81,4 @@ const Header = (): ReactElement => {
 	);
 };
 
-export default Header;
+export default memo(Header);

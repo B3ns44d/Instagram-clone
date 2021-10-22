@@ -59,7 +59,7 @@ export const navItems: IconsType = [
 		needNotifications: true,
 	},
 	{
-		key: 4,
+		key: 5,
 		name: 'activity',
 		outlineIcon: OutlineActivityIcon,
 		solidIcon: SolidActivityIcon,
