@@ -1,13 +1,17 @@
 import '../styles/globals.css';
-import type { AppProps } from 'next/app';
 import type { ReactElement } from 'react';
 import { Provider } from 'next-auth/client';
 import { nextAuthProviderConfig } from '@shared/utils';
+import { AppPropsWithLayout } from '@shared/types/index';
 
-const MyApp = ({ Component, pageProps }: AppProps): ReactElement => (
-	<Provider options={nextAuthProviderConfig} session={pageProps.session}>
-		<Component {...pageProps} />
-	</Provider>
-);
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout): ReactElement => {
+	const getLayout = Component.getLayout || ((page: ReactElement) => page);
+
+	return (
+		<Provider options={nextAuthProviderConfig} session={pageProps.session}>
+			{getLayout(<Component {...pageProps} />)}
+		</Provider>
+	);
+};
 
 export default MyApp;
